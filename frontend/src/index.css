@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --primary: #98C3ED;
+    --teal: #95C8CE;
+    --text-primary: #747986;
+    --text-secondary: #B4B7BF;
+    --bg-light: #E4E4E4;
+    --highlight: #FCECA4;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Premium modern buttons */
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 18px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(152, 195, 237, 0.4);
+    transform: translateY(-2px);
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  /* Core UI card shape with 18px radius */
+  .card {
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px -10px rgba(116, 121, 134, 0.08);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  .card:hover {
+    box-shadow: 0 15px 50px -10px rgba(152, 195, 237, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background-color: #f8fafc;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .input-field:focus {
+    background-color: white;
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  /* Utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+}
+
+@layer utilities {
+  .bg-healthcare-gradient {
+    background: radial-gradient(circle at 50% 0%, rgba(152, 195, 237, 0.12) 0%, rgba(152, 195, 237, 0) 50%), 
+                linear-gradient(135deg, #FFFFFF 0%, #E4EEF5 45%, #B5CDE0 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-primary); }
